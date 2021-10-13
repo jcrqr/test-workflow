@@ -14,7 +14,8 @@ repos:
     - cx-other-*
 
 on:
-  push
+  push:
+  workflow_dispatch:
 
 jobs:
   hello:
