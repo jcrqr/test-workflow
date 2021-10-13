@@ -1,0 +1,24 @@
+name: test_init_workflow
+
+secrets:
+  TEST_SECRET:
+    scope: org
+  AWS_REGION:
+    scope: repo
+    default: eu-west-1
+
+repos:
+  include:
+    - cx-skillable-*
+  exclude:
+    - cx-other-*
+
+on:
+  push
+
+jobs:
+  hello:
+    name: Hello, test_init_workflow!
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello, test_init_workflow!"
